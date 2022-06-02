@@ -9,7 +9,7 @@ namespace Buscador_Alumnos
         {
             Alumno alumno1 = new Alumno("andres", 4, true, new List<int> { 4, 1,-5, 2 });
             Alumno alumno2 = new Alumno("jose", 8, false, new List<int> { 10, 9, 4, 6 });
-            Alumno alumno3 = new Alumno("andres", 5, true, new List<int> { 10, 5, 4, 6 });
+            Alumno alumno3 = new Alumno("andres", 5, false, new List<int> { 10, 5, 4, 6 });
             Alumno alumno4 = new Alumno("sofia", 20, true, new List<int> { 0, 2, 4, 5 });
             Alumno alumno5 = new Alumno("andres", 8, false, new List<int> { 10, 9, 4, 6 });
 
@@ -35,12 +35,15 @@ namespace Buscador_Alumnos
             alumnos.Add(alumno4);
             alumnos.Add(alumno5);
 
-            Profesor.RecorrerListaDeAlumnos(Profesor.Nombre("ANDRES", alumnos));
+            Profesor.RecorrerAlumno(Profesor.Nombre("ANDRES", alumnos));
+            Console.WriteLine();
+            Profesor.RecorrerAlumno(Profesor.Nombre("SOFIA", alumnos));
             Console.WriteLine();
 
             Profesor.RecorrerAlumno(Profesor.BuscarAlumnoPorIdentificacion(20, alumnos));
             Console.WriteLine();
 
+            Console.WriteLine();
             Profesor.RecorrerListaDeAlumnos(Profesor.AlumnosInactivos(alumnos));
             Console.WriteLine();
 
@@ -53,11 +56,7 @@ namespace Buscador_Alumnos
             Console.WriteLine();
             Profesor.RecorrerAlumno(Profesor.AlumnoConMayorPromedio(alumnos));
 
-            //EJEMPLO MIO SETTER GETTER
-            Console.WriteLine();
-            Console.WriteLine();
-            alumno1.SetterActivo(false);
-            Console.WriteLine(alumno1.GetActivo());
+
         }
     }
 }
